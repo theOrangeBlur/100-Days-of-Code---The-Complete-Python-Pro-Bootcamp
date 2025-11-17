@@ -19,6 +19,6 @@ with open("Day24-Directories/Mail_Merge_Project_Start/Input/Names/invited_names.
         name_list.append(name)
         
 for name in name_list:
-    with open(f"Day24-Directories/Mail_Merge_Project_Start/Output/{name}_invite.txt", "w") as file:
+    with open(f"Day24-Directories/Mail_Merge_Project_Start/Output/ReadyToSend/{name}_invite.txt", "w") as file:
         text_str = letter_str.replace('[name]', name)
         file.write(text_str)
