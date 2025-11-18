@@ -36,10 +36,12 @@ while len(correct_guess_list) < 50:
     else:
         pass
 
-forgotten_states = data
-for guessed_state in correct_guess_list:
-    forgotten_states = forgotten_states.drop(forgotten_states[forgotten_states.state == guessed_state].index[0])
-forgotten_states.to_csv("Day25-Pandas/states/forgotten.csv")
+#forgotten_states = data
+#for guessed_state in correct_guess_list:
+#    forgotten_states = forgotten_states.drop(forgotten_states[forgotten_states.state == guessed_state].index[0])
+forgotten_states = [state for state in data.state.to_list() if state not in correct_guess_list]
+df = pandas.DataFrame(forgotten_states)
+df.to_csv("Day25-Pandas/states/forgotten.csv")
 
 
 
